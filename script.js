@@ -9,9 +9,15 @@ async function getData(data){
     updateDOM('loading');
 
  const response = await fetch(fetchString);
- const locationData = await response.json();
- console.log(locationData);
- updateDOM('data', locationData);
+ if(response){
+    const locationData = await response.json();
+    console.log(locationData);
+    updateDOM('data', locationData);
+ } else {
+     isError(true);
+     updateDOM('initial');
+ }
+ 
 }
 
 //leafletJs map API display and update
