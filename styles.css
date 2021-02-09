@@ -1,0 +1,149 @@
+/* google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+:root{
+    --vd-gray: hsl(0, 0%, 17%);
+    --d-gray: hsl(0, 0%, 59%);
+}
+
+body{
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.header{
+background-image: url('./images/pattern-bg.png');
+box-sizing: border-box;
+min-height: 35vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+z-index: 2;
+padding: 2rem;
+box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.349);
+}
+.header h1{
+    color: white;
+    font-weight: 300;
+    font-size: 1.8rem;
+    margin: 0;
+  
+}
+.header-input{
+    margin: 2rem;
+    display: flex;
+    align-items: center;   
+    width: 38%;
+}
+.header-input input, .header-input button{
+    outline: none;
+    border: none;
+}
+.header-input input{
+    width: 90%;
+padding: 0.9rem;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+font-size: 1rem;
+max-height: 3rem;
+}
+.header-input button{
+    width: 10%;
+    height: 3rem;
+    border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+background-color: black;
+background-image: url('./images/icon-arrow.svg');
+background-repeat: no-repeat;
+background-position: center;
+}
+
+
+.info{
+    width: 75%;
+    height: 130px;
+    margin: 0 auto;
+    
+    background-color: white;
+    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.041);
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    /* padding: 0.5rem; */
+    justify-content: space-evenly;
+    position: absolute;
+    z-index: 2;
+    padding: 0.3rem;
+    top: 25vh;
+    
+    left: 11%;
+    padding-left: 2rem;
+}
+.info-container{
+    width: 25%;
+   margin: 2rem;  
+   margin-left: 0;
+   box-sizing: border-box;
+}
+.info-title{
+    color: var(--d-gray);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+.info-content{
+    margin: 0;
+    border-right: rgba(0, 0, 0, 0.089) 1px solid;
+    padding: 1rem 0;
+    height: 2rem;
+    max-height: 2rem;
+    font-weight: 700;
+    color: var(--vd-gray);
+}
+.info-container:last-of-type .info-content{ 
+    border: none;
+}
+.map{
+    position: relative;
+z-index: 1;
+}
+#mapid { height: 62vh; }
+
+
+.attribution{
+    background-color: var(--vd-gray);
+    color: white;
+    font-size: 0.8rem;
+    
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 3vh;
+}
+
+/* styles for mobile */
+@media (max-width: 375px) {
+    .header{
+        padding: 1rem 0;   
+    }
+    .header h1{
+        font-size: 1.5rem;
+    }
+.header-input{
+    width: 90%;
+    margin: 1rem auto;
+}
+.info{
+    flex-direction: column;
+    height: 40vh;
+    width: 90%;
+    left: 5%;
+}
+  }
