@@ -4,9 +4,11 @@ const accessToken = ACCESS_TOKEN;
 const apiKey = API_KEY;
 
 //geo.ipify.org API data fetch by ip
-async function getData(ip){
+async function getData(data){
+    const fetchString = `https://geo.ipify.org/api/v1?apiKey=${apiKey}&${data.type==='ip' ? `ipAddress=${data.payload}`: `domain=${data.payload}`}`
     updateDOM('loading');
- const response = await fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ip}`);
+
+ const response = await fetch(fetchString);
  const locationData = await response.json();
  console.log(locationData);
  updateDOM('data', locationData);
@@ -79,14 +81,8 @@ const updateDOM = (state, data) => {
 
 //button click event
 const handleClick = () => {
- 
-    if(validate(input.value)){
-        isError(false);
-        getData(input.value);
-    } else {
-        
-        isError(true);   
-}}
+  validate(input.value); 
+}
 
 //input Enter key press event 
 const handleKeyUp = (event) => {
@@ -99,8 +95,22 @@ const handleKeyUp = (event) => {
 
 //input validation
 const validate = (value) => {
-    const ipRGEX = new RegExp(`^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$`);
-    return ipRGEX.test(value);
+    // const ipRGEX = new RegExp(`^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$`);
+    // return ipRGEX.test(value);
+
+    const ipRegExp = RegExp(`(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}`);
+	const domainRegExp = RegExp(`^((?!-)[A-Za-z0-9-]{1,63}(?<!-)\\.)+[A-Za-z]{2,6}$`);
+
+    if(ipRegExp.test(value)) {
+        isError(false);
+        getData({type: 'ip', payload: value});
+    } else if(domainRegExp.test(value)) {
+        isError(false);
+        getData({type: 'domain', payload: value});
+        
+    } else {
+        isError(true);
+    }
 }
 
 //show error string on bad validation
