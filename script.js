@@ -104,7 +104,7 @@ const validate = (value) => {
     // const ipRGEX = new RegExp(`^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$`);
     // return ipRGEX.test(value);
 
-    const ipRegExp = RegExp(`(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}`);
+    const ipRegExp = RegExp(`^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$`);
 	const domainRegExp = RegExp(`^((?!-)[A-Za-z0-9-]{1,63}(?<!-)\\.)+[A-Za-z]{2,6}$`);
 
     if(ipRegExp.test(value)) {
