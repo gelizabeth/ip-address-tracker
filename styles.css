@@ -67,6 +67,7 @@ background-image: url('./images/icon-arrow.svg');
 background-repeat: no-repeat;
 background-position: center;
 z-index: 99;
+cursor: pointer;
 }
 
 
