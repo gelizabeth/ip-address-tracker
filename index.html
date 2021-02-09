@@ -23,30 +23,35 @@ crossorigin=""/>
   <link rel="stylesheet" href="styles.css">
 
 </head>
-<body>
+<body >
   <section class="header">
     <h1>IP Address Tracker</h1>
-    <form action="" class="header-input">
-      <input type="text" placeholder="Search for any IP address or domain">
-      <button></button>
-    </form>
+    
+    <div class="header-input">
+      
+      <input type="text" placeholder="Search for any IP address" id='input'>
+      
+      <button id='submit' type='button'></button>
+    </div>
+    <span id="error">Please enter correct ip adress</span>
+    
   </section>
   <section class="info">
     <div class="info-container">
       <h3 class="info-title">IP Address</h3>
-      <p class="info-content"></p>
+      <p class="info-content" id='ip-result'></p>
     </div>
     <div class="info-container">
       <h3 class="info-title">Location</h3>
-      <p class="info-content"></p>
+      <p class="info-content" id='location-result'></p>
     </div>
     <div class="info-container">
       <h3 class="info-title">Timezone</h3>
-      <p class="info-content">UTC - </p>
+      <p class="info-content" id='timezone-result'>UTC - </p>
     </div>
     <div class="info-container">
       <h3 class="info-title">ISP</h3>
-      <p class="info-content"></p>
+      <p class="info-content" id='isp-result'></p>
     </div>
   </section>
   <section class="map">
@@ -55,8 +60,8 @@ crossorigin=""/>
   
 
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by  <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"> Frontend Mentor</a>. 
+    Coded by  <a href="https://yelyzaveta.netlify.app/" target="_blank"> Yelyzaveta Huivan</a>.
   </div>
 
 <script src="./script.js" type="module"></script>
