@@ -37,9 +37,14 @@ const  updateMap = (coordinates ) => { var marker = L.marker(coordinates).addTo(
 
 //on window load add event listeners to a button
 window.onload = () =>{
+//     var script = document.createElement('script');
+// script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+// script.type = 'text/javascript';
+// document.getElementsByTagName('head')[0].appendChild(script);
+
     const submitBtn = document.getElementById('submit');
     submitBtn.addEventListener('click', handleClick);  
-    submitBtn.on('touchstart', handleClick)
+    submitBtn.addEventListener('touchstart', handleClick, false);
 
     const input = document.getElementById('input');
     input.addEventListener('keyup', handleKeyUp);
