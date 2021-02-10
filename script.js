@@ -39,7 +39,7 @@ const  updateMap = (coordinates ) => { var marker = L.marker(coordinates).addTo(
 window.onload = () =>{
     const submitBtn = document.getElementById('submit');
     submitBtn.addEventListener('click', handleClick);  
-    submitBtn.addEventListener('touchstart', handleClick); 
+    submitBtn.on('touchstart', handleClick)
 
     const input = document.getElementById('input');
     input.addEventListener('keyup', handleKeyUp);
