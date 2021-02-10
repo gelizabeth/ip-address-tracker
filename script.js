@@ -44,7 +44,7 @@ window.onload = () =>{
 
     const submitBtn = document.getElementById('submit');
     submitBtn.addEventListener('click', handleClick);  
-    submitBtn.addEventListener('touchstart', handleClick, false);
+    submitBtn.addEventListener('touchstart', handleTouch, false);
 
     const input = document.getElementById('input');
     input.addEventListener('keyup', handleKeyUp);
@@ -94,6 +94,11 @@ const updateDOM = (state, data) => {
 //button click event
 const handleClick = (e) => {
     e.preventDefault();
+  validate(input.value); 
+}
+const handleTouch = () => {
+    console.log('touched');
+   
   validate(input.value); 
 }
 
