@@ -92,7 +92,8 @@ const updateDOM = (state, data) => {
 }
 
 //button click event
-const handleClick = () => {
+const handleClick = (e) => {
+    e.preventDefault();
   validate(input.value); 
 }
 
