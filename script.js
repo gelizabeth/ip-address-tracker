@@ -43,8 +43,6 @@ const updateMap = (coordinates) => {
 
 //on window load add event listeners to a button
 window.onload = () => {
-        
-
     const submitBtn = document.getElementById('submit');
     // submitBtn.addEventListener('click', handleClick);
     $('#submit').on('touchstart click', handleClick);
@@ -102,14 +100,12 @@ const handleClick = (e) => {
 }
 const handleTouch = () => {
     console.log('touched');
-
     validate(input.value);
 }
 
 //input Enter key press event 
 const handleKeyUp = (event) => {
     if (event.keyCode === 13) {
-        // event.preventDefault();
         console.log('enter clicked')
         document.getElementById('submit').click();
     }
@@ -117,9 +113,6 @@ const handleKeyUp = (event) => {
 
 //input validation
 const validate = (value) => {
-    // const ipRGEX = new RegExp(`^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$`);
-    // return ipRGEX.test(value);
-
     const ipRegExp = RegExp(`^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$`);
     const domainRegExp = RegExp(`^((?!-)[A-Za-z0-9-]{1,63}(?<!-)\\.)+[A-Za-z]{2,6}$`);
 
