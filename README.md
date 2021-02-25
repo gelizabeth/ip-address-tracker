@@ -12,6 +12,6 @@ Users are able to:
 - See hover states for all interactive elements on the page
 - Search for any IP addresses or domains and see the key information and location
 
-## Live demo - (https://gelizabeth.github.io/ip-address-tracker/)
+[Live demo] (https://gelizabeth.github.io/ip-address-tracker/)
 
 
